@@ -7,7 +7,7 @@ export default function Navigation() {
 
             <div className="nav-inner">
 
-                {/* LEFT */}
+                {/* Logo */}
 
                 <div className="nav-left">
 
@@ -26,7 +26,7 @@ export default function Navigation() {
 
                 </div>
 
-                {/* RIGHT */}
+                {/* Desktop Navigation */}
 
                 <div className="nav-links-wrap">
 
@@ -43,10 +43,17 @@ export default function Navigation() {
                         </Link>
 
                         <Link
-                            href="/classes"
+                            href="/weekly-classes"
                             className="nav-link"
                         >
                             Classes
+                        </Link>
+
+                        <Link
+                            href="/childcare-incursions"
+                            className="nav-link"
+                        >
+                            Childcare
                         </Link>
 
                         <Link
@@ -57,17 +64,17 @@ export default function Navigation() {
                         </Link>
 
                         <Link
-                            href="/incursions"
-                            className="nav-link"
-                        >
-                            Incursions
-                        </Link>
-
-                        <Link
                             href="/about"
                             className="nav-link"
                         >
                             About
+                        </Link>
+
+                        <Link
+                            href="/faqs"
+                            className="nav-link"
+                        >
+                            FAQs
                         </Link>
 
                         <Link
@@ -86,7 +93,7 @@ export default function Navigation() {
 
                     </nav>
 
-                    {/* Mobile Menu */}
+                    {/* Mobile Menu Button */}
 
                     <button
                         className="menu-toggle"
@@ -104,28 +111,9 @@ export default function Navigation() {
                             strokeLinecap="round"
                             strokeLinejoin="round"
                         >
-
-                            <line
-                                x1="3"
-                                y1="6"
-                                x2="21"
-                                y2="6"
-                            />
-
-                            <line
-                                x1="3"
-                                y1="12"
-                                x2="21"
-                                y2="12"
-                            />
-
-                            <line
-                                x1="3"
-                                y1="18"
-                                x2="21"
-                                y2="18"
-                            />
-
+                            <line x1="3" y1="6" x2="21" y2="6" />
+                            <line x1="3" y1="12" x2="21" y2="12" />
+                            <line x1="3" y1="18" x2="21" y2="18" />
                         </svg>
 
                     </button>

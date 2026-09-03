@@ -24,11 +24,9 @@ export default function Footer() {
                         <h2>Mini Sensory Club</h2>
 
                         <p>
-
-                            Inspiring curious little minds through
-                            sensory play, imagination and meaningful
-                            learning experiences.
-
+                            Inspiring curious little minds through sensory
+                            play, imagination and meaningful learning
+                            experiences across Newcastle and Lake Macquarie.
                         </p>
 
                     </div>
@@ -43,20 +41,24 @@ export default function Footer() {
 
                         <Link href="/">Home</Link>
 
-                        <Link href="/classes">
-                            Classes
+                        <Link href="/weekly-classes">
+                            Weekly Classes
+                        </Link>
+
+                        <Link href="/childcare-incursions">
+                            Childcare Incursions
                         </Link>
 
                         <Link href="/party-hire">
                             Party Hire
                         </Link>
 
-                        <Link href="/incursions">
-                            Incursions
-                        </Link>
-
                         <Link href="/about">
                             About
+                        </Link>
+
+                        <Link href="/faqs">
+                            FAQs
                         </Link>
 
                         <Link href="/contact">
@@ -75,11 +77,11 @@ export default function Footer() {
 
                         <p>Weekly Sensory Classes</p>
 
-                        <p>Birthday Parties</p>
+                        <p>Childcare Centre Incursions</p>
 
-                        <p>Childcare Incursions</p>
+                        <p>Soft Play Party Hire</p>
 
-                        <p>Private Events</p>
+                        <p>Special Events</p>
 
                     </div>
 
@@ -92,27 +94,19 @@ export default function Footer() {
                         <h3>Contact</h3>
 
                         <a href="tel:">
-
                             Call Us
-
                         </a>
 
                         <a href="mailto:">
-
                             Email Us
-
                         </a>
 
                         <a href="#">
-
                             Instagram
-
                         </a>
 
                         <a href="#">
-
                             Facebook
-
                         </a>
 
                     </div>
@@ -126,11 +120,24 @@ export default function Footer() {
                 <div className="footer-bottom">
 
                     <p>
-
-                        © {new Date().getFullYear()} Mini Sensory Club.
-                        All Rights Reserved.
-
+                        © {new Date().getFullYear()} Mini Sensory Club. All Rights Reserved.
                     </p>
+
+                    <div className="footer-legal">
+
+                        <Link href="/privacy-policy">
+                            Privacy Policy
+                        </Link>
+
+                        <Link href="/terms-and-conditions">
+                            Terms & Conditions
+                        </Link>
+
+                        <Link href="/website-disclaimer">
+                            Disclaimer
+                        </Link>
+
+                    </div>
 
                     <p>
 
@@ -153,5 +160,4 @@ export default function Footer() {
         </footer>
 
     );
-
 }
