@@ -890,3 +890,226 @@ p{
 .form-group textarea{
     resize:vertical;
 }
+
+
+
+/* ==========================================================
+   SOFT PASTEL BRAND ACCENTS
+   Keeps white backgrounds but adds Mini Sensory Club colour
+========================================================== */
+
+/* ---------- HERO SOFT BACKGROUND GLOW ---------- */
+
+.hero{
+    position:relative;
+    overflow:hidden;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    width:420px;
+    height:420px;
+    border-radius:50%;
+    background:rgba(245,133,165,.16);
+    top:80px;
+    left:-180px;
+    z-index:0;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    width:360px;
+    height:360px;
+    border-radius:50%;
+    background:rgba(106,195,240,.16);
+    bottom:60px;
+    right:-140px;
+    z-index:0;
+}
+
+.hero .container{
+    position:relative;
+    z-index:1;
+}
+
+
+
+/* ---------- SOFT SECTION TAG COLOURS ---------- */
+
+.section:nth-of-type(2) .section-tag,
+.section:nth-of-type(6) .section-tag{
+    background:rgba(245,133,165,.14);
+    color:#b94c6d;
+}
+
+.section:nth-of-type(3) .section-tag,
+.section:nth-of-type(7) .section-tag{
+    background:rgba(240,203,118,.20);
+    color:#9b741e;
+}
+
+.section:nth-of-type(4) .section-tag,
+.section:nth-of-type(8) .section-tag{
+    background:rgba(106,195,240,.18);
+    color:#287fa8;
+}
+
+.section:nth-of-type(5) .section-tag{
+    background:rgba(198,145,214,.18);
+    color:#87549a;
+}
+
+
+
+/* ---------- FEATURE ICON PASTEL ROTATION ---------- */
+
+.card:nth-child(1) .feature-icon{
+    background:rgba(17,125,112,.10);
+}
+
+.card:nth-child(2) .feature-icon{
+    background:rgba(245,133,165,.18);
+}
+
+.card:nth-child(3) .feature-icon{
+    background:rgba(240,203,118,.24);
+}
+
+.card:nth-child(4) .feature-icon{
+    background:rgba(106,195,240,.18);
+}
+
+.card:nth-child(5) .feature-icon{
+    background:rgba(198,145,214,.18);
+}
+
+.card:nth-child(6) .feature-icon{
+    background:rgba(240,102,76,.16);
+}
+
+
+
+/* ---------- SOFT CARD ACCENT LINES ---------- */
+
+.card{
+    border:1px solid rgba(0,0,0,.03);
+    position:relative;
+    overflow:hidden;
+}
+
+.card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:6px;
+    background:var(--primary);
+    opacity:.75;
+}
+
+.card:nth-child(2)::before{
+    background:var(--pink);
+}
+
+.card:nth-child(3)::before{
+    background:var(--yellow);
+}
+
+.card:nth-child(4)::before{
+    background:var(--blue);
+}
+
+.card:nth-child(5)::before{
+    background:var(--purple);
+}
+
+.card:nth-child(6)::before{
+    background:var(--coral);
+}
+
+
+
+/* ---------- IMAGE PLACEHOLDER PASTEL STYLE ---------- */
+
+.image-placeholder{
+    background:
+        linear-gradient(
+            135deg,
+            rgba(245,133,165,.10),
+            rgba(106,195,240,.10),
+            rgba(240,203,118,.12)
+        );
+    border:2px dashed rgba(17,125,112,.22);
+    color:var(--grey);
+}
+
+
+
+/* ---------- SOFT SERVICE CARD HOVER ---------- */
+
+.service-card:hover{
+    background:linear-gradient(
+        180deg,
+        var(--white),
+        rgba(248,249,250,.85)
+    );
+}
+
+
+
+/* ---------- CTA BUTTON POLISH ---------- */
+
+.cta{
+    position:relative;
+    overflow:hidden;
+}
+
+.cta::before{
+    content:"";
+    position:absolute;
+    width:260px;
+    height:260px;
+    border-radius:50%;
+    background:rgba(245,133,165,.28);
+    top:-120px;
+    left:-90px;
+}
+
+.cta::after{
+    content:"";
+    position:absolute;
+    width:240px;
+    height:240px;
+    border-radius:50%;
+    background:rgba(240,203,118,.26);
+    bottom:-110px;
+    right:-80px;
+}
+
+.cta h2,
+.cta p,
+.cta .hero-buttons{
+    position:relative;
+    z-index:1;
+}
+
+
+
+/* ---------- MOBILE SOFTENING ---------- */
+
+@media(max-width:768px){
+
+    .hero::before,
+    .hero::after{
+        width:260px;
+        height:260px;
+    }
+
+    .card::before{
+        height:5px;
+    }
+
+}
