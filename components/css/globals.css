@@ -312,6 +312,14 @@ p{
     transform:translateY(-2px);
 }
 
+.section-button{
+
+    margin-top:45px;
+
+    text-align:center;
+
+}
+
 /* ==========================================================
    SECTION HEADINGS
 ========================================================== */
