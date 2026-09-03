@@ -1,13 +1,13 @@
 export default function Footer() {
+  return (
+    <footer>
 
-    return (
+      <div className="container">
 
-        <footer>
+        © 2026 Mini Sensory Club
 
-            Footer
+      </div>
 
-        </footer>
-
-    );
-
+    </footer>
+  );
 }

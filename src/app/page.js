@@ -1,25 +1,13 @@
-import Layout from "@/components/Layout";
-
 export default function Home() {
+  return (
+    <main className="container">
 
-    return (
+      <h1>Mini Sensory Club</h1>
 
-        <Layout>
+      <p>
+        Welcome to the Crane Platform Labs Website Framework.
+      </p>
 
-            <main className="container">
-
-                <h1>Mini Sensory Club</h1>
-
-                <p>
-
-                    Crane Platform Labs Framework v1
-
-                </p>
-
-            </main>
-
-        </Layout>
-
-    );
-
+    </main>
+  );
 }

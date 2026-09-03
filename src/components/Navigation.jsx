@@ -1,13 +1,11 @@
 export default function Navigation() {
+  return (
+    <header>
+      <nav className="container">
 
-    return (
+        <h2>Mini Sensory Club</h2>
 
-        <nav>
-
-            Navigation
-
-        </nav>
-
-    );
-
+      </nav>
+    </header>
+  );
 }
