@@ -114,13 +114,21 @@ if (siteFooter) {
 
                         <h3>Services</h3>
 
-                        <p>Weekly Sensory Classes</p>
+                        <a href="weekly-classes.html">
+                            Weekly Sensory Classes
+                        </a>
 
-                        <p>Childcare Centre Incursions</p>
+                        <a href="childcare-incursions.html">
+                            Childcare Centre Incursions
+                        </a>
 
-                        <p>Soft Play Party Hire</p>
+                        <a href="party-hire.html">
+                            Soft Play Party Hire
+                        </a>
 
-                        <p>Special Events</p>
+                        <a href="contact.html">
+                            Special Events
+                        </a>
 
                     </div>
 
@@ -139,7 +147,7 @@ if (siteFooter) {
                         </a>
 
                         <a
-                            href="https://www.instagram.com/minisensoryclub"
+                            href="https://www.instagram.com/minisensoryclub/"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
