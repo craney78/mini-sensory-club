@@ -1,13 +1,21 @@
+import Hero from "../components/Hero";
+import ClassesPreview from "../components/ClassesPreview";
+import PartySection from "../components/PartySection";
+import ChildcareSection from "../components/ChildcareSection";
+import WhyChooseUs from "../components/WhyChooseUs";
+
 export default function Home() {
-  return (
-    <main className="container">
+    return (
+        <>
+            <Hero />
 
-      <h1>Mini Sensory Club</h1>
+            <ClassesPreview />
 
-      <p>
-        Welcome to the Crane Platform Labs Website Framework.
-      </p>
+            <PartySection />
 
-    </main>
-  );
+            <ChildcareSection />
+
+            <WhyChooseUs />
+        </>
+    );
 }

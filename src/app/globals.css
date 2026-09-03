@@ -133,3 +133,170 @@ font-size:2rem;
 }
 
 }
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+
+    padding:100px 0;
+
+}
+
+.hero-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:60px;
+
+    align-items:center;
+
+}
+
+.hero-tag{
+
+    color:var(--primary);
+
+    font-weight:700;
+
+    margin-bottom:15px;
+
+}
+
+.hero-text{
+
+    max-width:560px;
+
+    margin:25px 0;
+
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:15px 32px;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.btn-primary{
+
+    background:var(--primary);
+
+    color:#fff;
+
+}
+
+.btn-primary:hover{
+
+    opacity:.9;
+
+}
+
+.btn-secondary{
+
+    border:2px solid var(--primary);
+
+    color:var(--primary);
+
+}
+
+.btn-secondary:hover{
+
+    background:var(--primary);
+
+    color:#fff;
+
+}
+
+/* =====================================================
+   IMAGE PLACEHOLDER
+===================================================== */
+
+.image-placeholder{
+
+    width:100%;
+
+    height:500px;
+
+    border:2px dashed #d7d7d7;
+
+    border-radius:20px;
+
+    background:#f7f7f7;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    color:#888;
+
+    font-size:20px;
+
+}
+
+@media (max-width: 900px){
+
+.hero-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.hero{
+
+padding:70px 0;
+
+}
+
+.image-placeholder{
+
+height:320px;
+
+}
+
+.hero-content{
+
+text-align:center;
+
+}
+
+.hero-buttons{
+
+justify-content:center;
+
+}
+
+}
+
