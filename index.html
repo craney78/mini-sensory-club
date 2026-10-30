@@ -56,6 +56,94 @@
     <!-- CSS -->
     <link rel="stylesheet" href="components/css/globals.css">
 
+    <!-- HOME PAGE EXTRAS: service photos + next class pill -->
+    <style>
+        .service-photo {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            border-radius: 24px;
+            display: block;
+            margin-bottom: 18px;
+        }
+
+        .next-class {
+            display: inline-flex;
+            align-items: center;
+            flex-wrap: nowrap;
+            gap: 10px 14px;
+            margin: 4px 0 22px;
+            padding: 8px 8px 8px 18px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.75);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+            font-size: 0.95rem;
+            line-height: 1.4;
+            max-width: 100%;
+        }
+
+        .events-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 24px;
+        }
+
+        .event-card {
+            flex: 1 1 300px;
+            max-width: 420px;
+            text-align: center;
+        }
+
+        .event-date {
+            display: inline-block;
+            padding: 6px 16px;
+            margin-bottom: 12px;
+            border-radius: 999px;
+            background: rgba(0, 0, 0, 0.05);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        #events[hidden] {
+            display: none;
+        }
+
+        .next-class[hidden] {
+            display: none;
+        }
+
+        /* Uses the site's own brand button colours (btn-primary), just smaller */
+        .next-class .next-class-book {
+            display: inline-block;
+            width: auto;
+            min-width: 0;
+            flex: 0 0 auto;
+            padding: 6px 18px;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            border-radius: 999px;
+            white-space: nowrap;
+            margin: 0;
+        }
+
+        @media (max-width: 420px) {
+            .next-class {
+                flex-wrap: wrap;
+                justify-content: center;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .next-class {
+                border-radius: 22px;
+                padding: 10px 10px 10px 16px;
+            }
+        }
+    </style>
+
     <!-- LOCAL BUSINESS STRUCTURED DATA -->
     <script type="application/ld+json">
     {
@@ -196,7 +284,7 @@
                 "item": {
                     "@type": "Service",
                     "name": "Soft Play Party Hire",
-                    "description": "Soft play party hire packages for birthdays and events within 30 km of Whitebridge.",
+                    "description": "Soft play party hire packages for birthdays and events within 20 km of Whitebridge.",
                     "provider": {
                         "@id": "https://www.minisensoryclub.com.au/#localbusiness"
                     },
@@ -245,6 +333,14 @@
                 <h1>
                     Inspiring Curious Little Minds Through Sensory Play
                 </h1>
+
+                <!-- NEXT CLASS PILL (settings are in the script at the bottom of this file) -->
+                <div class="next-class" id="next-class" hidden>
+                    <span class="next-class-text" id="next-class-text"></span>
+                    <a href="https://linktr.ee/minisensoryclub" target="_blank" rel="noopener noreferrer" class="btn btn-primary next-class-book">
+                        Book
+                    </a>
+                </div>
 
                 <p class="hero-text">
                     Boutique sensory play experiences for babies, toddlers
@@ -308,7 +404,10 @@
 
             <div class="grid-3">
 
-               <img src="images/class-weekly.jpg" alt="Weekly sensory class" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:24px; display:block;"
+                <div class="card service-card">
+
+                    <img src="images/class-weekly.jpg" alt="Babies exploring at a weekly sensory class" class="service-photo">
+
                     <h3>
                         Weekly Sensory Classes
                     </h3>
@@ -328,11 +427,7 @@
 
                 <div class="card service-card">
 
-                    <div class="image-placeholder">
-                        Incursion Image
-                        <br>
-                        Coming Soon
-                    </div>
+                    <img src="images/class-incursion.jpg" alt="Sensory play incursion at a childcare centre" class="service-photo">
 
                     <h3>
                         Childcare Centre Incursions
@@ -353,11 +448,7 @@
 
                 <div class="card service-card">
 
-                    <div class="image-placeholder">
-                        Party Hire Image
-                        <br>
-                        Coming Soon
-                    </div>
+                    <img src="images/class-party.jpg" alt="Soft play party setup" class="service-photo">
 
                     <h3>
                         Soft Play Party Hire
@@ -385,6 +476,40 @@
 
 
     <!-- ==========================================
+         UPCOMING EVENTS
+         (events are listed in the script at the bottom
+         of this file - look for "EVENTS - EDIT ME")
+    ========================================== -->
+
+    <section class="section section-light" id="events" hidden>
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <p class="section-tag">
+                    Community Events
+                </p>
+
+                <h2>
+                    Upcoming Events
+                </h2>
+
+                <p class="section-description">
+                    Special get-togethers for our Mini Sensory Club families.
+                </p>
+
+            </div>
+
+            <div class="events-list" id="events-list"></div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==========================================
          MEET RUBY AND ARABELLA
     ========================================== -->
 
@@ -394,11 +519,7 @@
 
             <div>
 
-                <div class="image-placeholder">
-                    Ruby & Arabella Image
-                    <br>
-                    Coming Soon
-                </div>
+                <img src="images/founders.jpg" alt="Ruby and Arabella, founders of Mini Sensory Club" class="service-photo" style="object-position: center 25%; margin-bottom: 0;">
 
             </div>
 
@@ -578,49 +699,21 @@
                 </h2>
 
                 <p class="section-description">
-                    Real class photos and behind-the-scenes moments will be
-                    added here once photography is ready.
+                    See what we've been getting up to in class and behind
+                    the scenes.
                 </p>
 
             </div>
 
-            <div class="grid-3">
-
-                <div class="image-placeholder">
-                    Instagram Image
-                </div>
-
-                <div class="image-placeholder">
-                    Instagram Image
-                </div>
-
-                <div class="image-placeholder">
-                    Instagram Image
-                </div>
-
-                <div class="image-placeholder">
-                    Instagram Image
-                </div>
-
-                <div class="image-placeholder">
-                    Instagram Image
-                </div>
-
-                <div class="image-placeholder">
-                    Instagram Image
-                </div>
-
-                <div class="section-button">
-                    <a
-                        href="https://www.instagram.com/minisensoryclub/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="btn btn-primary"
-                    >
-                        Follow Us on Instagram
-                    </a>
-                </div>
-
+            <div class="section-button" style="text-align:center;">
+                <a
+                    href="https://www.instagram.com/minisensoryclub/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-primary"
+                >
+                    Follow Us on Instagram
+                </a>
             </div>
 
         </div>
@@ -639,6 +732,200 @@
     <!-- COMPONENT FILES -->
     <script src="/components/navigation.js"></script>
     <script src="/components/footer.js"></script>
+
+    <!-- ==========================================
+         EVENTS - EDIT ME
+         ------------------------------------------
+         To ADD an event: copy one block from { to },
+         paste it inside the [ ], put a comma between
+         blocks, and change the words.
+
+         date:  year-month-day, e.g. "2026-11-06"
+         time:  how you want the time shown
+         title: the event name
+         text:  one or two sentences
+         link:  where the button goes (optional,
+                delete the whole line for no button)
+         linkText: the button words (optional,
+                shows "Find Out More" if left out)
+
+         Events disappear by themselves the day after
+         their date. If none are left, the whole
+         section hides.
+    ========================================== -->
+    <script>
+    var events = [
+        {
+            date: "2026-11-06",
+            time: "10:00am",
+            title: "Fire Station Visit",
+            text: "A free community visit to meet the local firefighters. This event is now fully booked. Follow us on Instagram so you don't miss the next one!",
+            link: "https://www.instagram.com/minisensoryclub/",
+            linkText: "Follow on Instagram"
+        }
+    ];
+    </script>
+
+    <script>
+    (function () {
+        var section = document.getElementById("events");
+        var list = document.getElementById("events-list");
+        if (!section || !list || typeof events === "undefined") return;
+
+        // Today's date in Newcastle, as "YYYY-MM-DD"
+        var today = new Intl.DateTimeFormat("en-CA", { timeZone: "Australia/Sydney" }).format(new Date());
+
+        var upcoming = events
+            .filter(function (e) { return e.date && e.date >= today; })
+            .sort(function (a, b) { return a.date < b.date ? -1 : 1; });
+
+        if (!upcoming.length) return;
+
+        upcoming.forEach(function (e) {
+            var parts = e.date.split("-");
+            var d = new Date(Date.UTC(+parts[0], +parts[1] - 1, +parts[2], 12));
+            var nice = d.toLocaleDateString("en-AU", { weekday: "short", day: "numeric", month: "short", timeZone: "UTC" });
+
+            var card = document.createElement("div");
+            card.className = "card service-card event-card";
+
+            var date = document.createElement("span");
+            date.className = "event-date";
+            date.textContent = nice + (e.time ? " · " + e.time : "");
+            card.appendChild(date);
+
+            var h = document.createElement("h3");
+            h.textContent = e.title || "";
+            card.appendChild(h);
+
+            if (e.text) {
+                var pEl = document.createElement("p");
+                pEl.textContent = e.text;
+                card.appendChild(pEl);
+            }
+
+            if (e.link) {
+                card.appendChild(document.createElement("br"));
+                var a = document.createElement("a");
+                a.href = e.link;
+                a.target = "_blank";
+                a.rel = "noopener noreferrer";
+                a.className = "btn btn-secondary";
+                a.textContent = e.linkText || "Find Out More";
+                card.appendChild(a);
+            }
+
+            list.appendChild(card);
+        });
+
+        section.hidden = false;
+    })();
+    </script>
+
+    <!-- ==========================================
+         NEXT CLASS PILL — SETTINGS
+         ------------------------------------------
+         To change what the pill shows, edit the
+         three lines marked "EDIT ME" below.
+
+         mode: "on"      = shows the next class countdown
+               "return"  = shows "Classes return ..." (term break)
+               "off"     = hides the pill completely
+
+         returnDate: the words shown after
+               "Classes return" when mode is "return"
+    ========================================== -->
+    <script>
+    (function () {
+
+        var mode = "on";                         // EDIT ME: "on", "return" or "off"
+        var returnDate = "Monday 2 February";    // EDIT ME: used when mode is "return"
+        var classes = [                          // EDIT ME: day (0 = Sunday, 1 = Monday ... 5 = Friday), hour (24hr), minute, ages
+            { day: 1, hour: 10, minute: 30, ages: "0–12 months" },
+            { day: 1, hour: 11, minute: 30, ages: "0–2 years" },
+            { day: 5, hour: 9,  minute: 30, ages: "0–12 months" },
+            { day: 5, hour: 10, minute: 30, ages: "0–5 years" }
+        ];
+
+        /* ---- nothing below here needs changing ---- */
+
+        var CLASS_LENGTH_MINS = 45;
+        var DAY_NAMES = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        var pill = document.getElementById("next-class");
+        var text = document.getElementById("next-class-text");
+        if (!pill || !text || mode === "off") return;
+
+        if (mode === "return") {
+            text.textContent = "Classes return " + returnDate;
+            pill.hidden = false;
+            return;
+        }
+
+        // Current Newcastle (Australia/Sydney) time, whatever the viewer's timezone
+        function newcastleNow() {
+            var parts = new Intl.DateTimeFormat("en-AU", {
+                timeZone: "Australia/Sydney",
+                year: "numeric", month: "numeric", day: "numeric",
+                hour: "numeric", minute: "numeric", hourCycle: "h23"
+            }).formatToParts(new Date());
+            var p = {};
+            parts.forEach(function (x) { p[x.type] = x.value; });
+            return new Date(Date.UTC(+p.year, +p.month - 1, +p.day, +p.hour % 24, +p.minute));
+        }
+
+        function timeLabel(h, m) {
+            var suffix = h >= 12 ? "pm" : "am";
+            var h12 = h % 12 === 0 ? 12 : h % 12;
+            return h12 + ":" + (m < 10 ? "0" + m : m) + suffix;
+        }
+
+        function plural(n, word) {
+            return n + " " + word + (n === 1 ? "" : "s");
+        }
+
+        function update() {
+            var now = newcastleNow();
+            var best = null;
+
+            for (var add = 0; add <= 7; add++) {
+                classes.forEach(function (c) {
+                    var d = new Date(now.getTime());
+                    d.setUTCDate(d.getUTCDate() + add);
+                    if (d.getUTCDay() !== c.day) return;
+                    d.setUTCHours(c.hour, c.minute, 0, 0);
+                    var minsAway = (d - now) / 60000;
+                    if (minsAway > -CLASS_LENGTH_MINS && (!best || d < best.date)) {
+                        best = { date: d, c: c, minsAway: minsAway };
+                    }
+                });
+            }
+            if (!best) { pill.hidden = true; return; }
+
+            var ages = best.c.ages ? " (" + best.c.ages + ")" : "";
+            var label = "Next class: " + DAY_NAMES[best.c.day] + " " + timeLabel(best.c.hour, best.c.minute) + ages;
+            var m = Math.round(best.minsAway);
+
+            if (m <= 0) {
+                label = "Class on now: " + DAY_NAMES[best.c.day] + " " + timeLabel(best.c.hour, best.c.minute) + ages;
+            } else {
+                var days = Math.floor(m / 1440);
+                var hrs = Math.floor((m % 1440) / 60);
+                var mins = m % 60;
+                var when;
+                if (days > 0) when = plural(days, "day") + (hrs ? ", " + hrs + " hr" + (hrs === 1 ? "" : "s") : "");
+                else if (hrs > 0) when = hrs + " hr" + (hrs === 1 ? "" : "s") + (mins ? ", " + mins + " min" + (mins === 1 ? "" : "s") : "");
+                else when = plural(mins, "min");
+                label += " · starts in " + when;
+            }
+
+            text.textContent = label;
+            pill.hidden = false;
+        }
+
+        update();
+        setInterval(update, 60000);
+    })();
+    </script>
 
 </body>
 </html>

@@ -55,7 +55,7 @@ if (siteNavigation) {
                             href="childcare-incursions.html"
                             class="nav-link"
                         >
-                            Childcare
+                            Incursions
                         </a>
 
                         <a
@@ -87,7 +87,7 @@ if (siteNavigation) {
                         </a>
 
                         <a
-                            href="tel:"
+                            href="tel:0426546219"
                             class="nav-cta"
                         >
                             Call Us
